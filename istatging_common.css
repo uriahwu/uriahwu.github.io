@@ -1,0 +1,18 @@
+#web_ar {
+  position: relative;
+  top: 50%;
+  left: 45%;
+  width: 200px;
+  height: 100px;
+}
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 10px 15px 10px 15px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
