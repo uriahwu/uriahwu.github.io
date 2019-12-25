@@ -11,15 +11,17 @@
   
   function createLink(os) {
     var link = document.createElement("a");
-    link.innerHTML = "CLICK ME";
-    link.setAttribute("class", "button");
     
     if( os == "AndroidOS" ) {
       link.setAttribute("href", android_link);
     } else if (os == "iOS" ) {
       link.setAttribute("href", ios_link);
     }
-    var target = document.getElementById("web_ar");
+    var target = document.getElementById("web_ar"),
+        image = target.children[0];
+
+    image.remove();
+    link.appendChild(image);
     target.appendChild(link);
   }
 
