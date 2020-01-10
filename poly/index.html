@@ -1,0 +1,147 @@
+<html lang="en">
+  <head>
+		<title>WebAR[model-viewer] from Google Poly</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	</head>
+	<body>
+		<span id="viewer">
+		  <div id="card">
+        <!-- All you need to put beautiful, interactive 3D content on your site: -->
+        <model-viewer src="https://poly.googleapis.com/downloads/fp/1578308458849713/ccQg0nHGSA9/6uuAmLTeSYs/model.gltf" alt="A 3D model of an astronaut" background-color="#70BCD1" shadow-intensity="1" camera-controls="" auto-rotate="" ar="">
+        </model-viewer>
+        <section class="attribution">
+          <span>
+      			<span id="asset_name">The cockpit</span><br>
+      			<span id="asset_author">Romain Revert</span>
+          </span>
+        </section>
+      </div>
+
+		</span>
+		
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@v0.3.1/dist/model-viewer.js">
+    </script>
+  
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule="" src="https://unpkg.com/@google/model-viewer@v0.3.1/dist/model-viewer-legacy.js">
+    </script>
+		<script>
+			const WIDTH = viewer.offsetWidth;
+			const HEIGHT = viewer.offsetHeight;
+
+      const MODEL_VIEWER = document.querySelector('model-viewer');
+
+			// POLY REST API
+
+			const API_KEY = 'AIzaSyAlTtZcybOngP2aFwdcc2WKh4UONT-oy6w';
+
+			function searchPoly( keywords, onLoad ) {
+
+				var url = `https://poly.googleapis.com/v1/assets?keywords=${keywords}&format=GLTF2&key=${API_KEY}`;
+
+				var request = new XMLHttpRequest();
+				request.open( 'GET', url, true );
+				request.addEventListener( 'load', function ( event ) {
+
+					onLoad( JSON.parse( event.target.response ) );
+
+				} );
+				request.send( null );
+
+			}
+
+			function createImage( asset ) {
+        
+				var image = document.createElement( 'img' );
+				image.src = asset.thumbnail.url;
+				image.style.width = '100px';
+				image.style.height = '75px';
+
+				var format = asset.formats.find( format => { return (format.formatType === 'GLTF2'); } );
+        var format_usdz = asset.formats.find( format => { return (format.formatType === 'USDZ'); } );
+
+				if ( format !== undefined ) {
+				  
+					image.onclick = function () {
+
+					  asset_name.textContent = asset.displayName;
+						asset_author.textContent = asset.authorName;
+
+            var glTF = format.root;
+            MODEL_VIEWER.setAttribute('src', glTF.url);
+
+            if (format_usdz !== undefined ) {
+              var usdz = format_usdz.root;
+              MODEL_VIEWER.setAttribute('ios-src', usdz.url);
+            } else {
+              MODEL_VIEWER.removeAttribute('iso-src');
+            }
+
+					}
+
+				}
+
+				return image;
+
+			}
+
+			function onResults( data ) {
+
+				while ( results.childNodes.length ) {
+
+					results.removeChild( results.firstChild );
+
+				}
+
+				var assets = data.assets;
+
+				if ( assets ) {
+
+					for ( var i = 0; i < assets.length; i ++ ) {
+
+						var asset = assets[ i ];
+
+						var image = createImage( asset );
+						results.appendChild( image );
+
+					}
+
+				} else {
+
+					results.innerHTML = '<center>NO RESULTS</center>';
+
+				}
+
+			}
+
+			search.addEventListener( 'submit', function ( event ) {
+
+				event.preventDefault()
+
+				searchPoly( query.value, onResults );
+
+			} );
+
+			button.click();
+
+			if ( API_KEY.startsWith( '**' ) ) {
+
+				alert( 'Sample incorrectly set up. Please enter your API Key for the Poly API in the API_KEY variable.' );
+
+			}
+		</script>
+	
+
+</body>
+</html>
