@@ -3,7 +3,43 @@
 		<title>WebAR[model-viewer] from Google Poly</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	</head>
+    <style>
+			html {
+				height: 100%;
+			}
+			body {
+				height: 100%;
+				font-family: sans-serif;
+				line-height: 24px;
+			}
+      #card {
+        margin: 1em auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+      }
+      model-viewer {
+        width: 100%;
+        height: 400px;
+      }
+      .attribution {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1em;
+      }
+      .attribution h1 {
+        margin: 0 0 0.25em;
+      }
+      .attribution img {
+        opacity: 0.5;
+        height: 2em;
+      }
+		</style>	
+  </head>
 	<body>
 		<span id="viewer">
 		  <div id="card">
