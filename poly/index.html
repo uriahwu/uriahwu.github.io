@@ -44,7 +44,7 @@
 		<span id="viewer">
 		  <div id="card">
         <!-- All you need to put beautiful, interactive 3D content on your site: -->
-        <model-viewer src="https://poly.googleapis.com/downloads/fp/1578308458849713/ccQg0nHGSA9/6uuAmLTeSYs/model.gltf" alt="A 3D model of an astronaut" background-color="#70BCD1" shadow-intensity="1" camera-controls="" magic-leap="" unstable-webxr="" data-js-focus-visible="" ar="" iso-src="https://poly.googleusercontent.com/downloads/fp/1578655715912299/f1MPNJ-kqCE/bcd5wZRjnXu/table.usdz" >
+        <model-viewer src="https://poly.googleapis.com/downloads/fp/1578308458849713/ccQg0nHGSA9/6uuAmLTeSYs/model.gltf" alt="A 3D model of an astronaut" background-color="#70BCD1" shadow-intensity="1" camera-controls="" magic-leap="" unstable-webxr="" data-js-focus-visible="" ar="" ios-src="https://poly.googleusercontent.com/downloads/fp/1578655715912299/f1MPNJ-kqCE/bcd5wZRjnXu/table.usdz" >
         </model-viewer>
         <section class="attribution">
           <span>
@@ -121,7 +121,7 @@
               var usdz = format_usdz.root;
               MODEL_VIEWER.setAttribute('ios-src', usdz.url);
             } else {
-              MODEL_VIEWER.removeAttribute('iso-src');
+              MODEL_VIEWER.removeAttribute('ios-src');
             }
 
 					}
