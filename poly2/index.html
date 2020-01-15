@@ -1,8 +1,8 @@
 <html lang="en" class="js-focus-visible"><head>
   <title>&lt;model-viewer&gt; Augmented Reality</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no,
-  minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <link type="text/css" href="styles/examples.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 
@@ -30,74 +30,15 @@
 <body>
 
   <div class="sample">
-    <div id="demo-container-1" class="demo">
-      <!--model-viewer src="assets/Astronaut.glb" ar="" ar-scale="auto" camera-controls="" alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap="" unstable-webxr="" data-js-focus-visible=""></model-viewer-->
-    </div>
+    <div id="demo-container-1" class="demo"></div>
     <div class="content">
       <div class="wrapper">
-
-        <a class="lockup" href="../index.html"><div class="icon-button icon-modelviewer-black"></div><h1>examples</h1></a>
-        <div class="heading">
-          <h2 class="demo-title">Augmented Reality</h2>
-          <h4>This demonstrates several augmented reality features, including <code>unstable-webxr</code>, <code>magic-leap</code>, <code>ios-src</code>, &amp; the accompanying attribute <code>quick-look-browsers</code>.</h4>
-        </div>
         <example-snippet stamp-to="demo-container-1" highlight-as="html">
           <template>
-<model-viewer src="assets/Astronaut.glb" ar="" ar-scale="auto" camera-controls="" alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap="" unstable-webxr=""></model-viewer>
+<model-viewer src="https://poly.googleapis.com/downloads/fp/1579086820441466/f1MPNJ-kqCE/eXNYNtQbSvA/table.gltf" ar="" ar-scale="auto" camera-controls="" alt="A 3D model of an astronaut" background-color="#222" ios-src="https://poly.googleapis.com/downloads/fp/1579086820441466/f1MPNJ-kqCE/bcd5wZRjnXu/table.usdz" magic-leap="" unstable-webxr=""></model-viewer>
           </template>
-        <pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assets/Astronaut.glb<span class="token punctuation">"</span></span> <span class="token attr-name">ar</span> <span class="token attr-name">ar-scale</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>auto<span class="token punctuation">"</span></span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>A 3D model of an astronaut<span class="token punctuation">"</span></span> <span class="token attr-name">background-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#222<span class="token punctuation">"</span></span> <span class="token attr-name">ios-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assets/Astronaut.usdz<span class="token punctuation">"</span></span> <span class="token attr-name">magic-leap</span> <span class="token attr-name">unstable-webxr</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>model-viewer</span><span class="token punctuation">&gt;</span></span></code></pre></example-snippet>
-
-        <h3 style="margin-top: 40px; padding-bottom: 8px;" class="border-bottom">iOS, Magic Leap &amp; WebXR</h3>
-        <ul class="list-attribute">
-          <li>
-            <div>ar</div>
-            <p>Enable the ability to launch
-            <a href="https://developers.google.com/ar/develop/java/scene-viewer">Scene Viewer</a>
-            on supported devices.</p>
-          </li>
-          <li>
-            <div>ar-scale</div>
-            <p>Controls the scaling behavior in AR mode in
-            <a href="https://developers.google.com/ar/develop/java/scene-viewer">Scene Viewer</a>.
-            Set to "fixed" to disable scaling of the model, which sets it to
-            always be at 100% scale. Defaults to "auto" which allows the model to
-            be resized.</p>
-          </li>
-          <li>
-            <div>ios-src</div>
-            <p>Provides augmented reality on supported iOS 12+ devices via AR Quick Look, but requires an additional USDZ model.</p>
-          </li>
-          <li>
-            <div>quick-look-browsers</div>
-            <p>Set this attribute to control which iOS browsers will be allowed
-              to launch AR Quick Look on iOS. Allowed values are "safari" and
-              "chrome". You can specify any number of browsers separated by
-              whitespace, for example: "safari chrome". Defaults to "safari".</p>
-          </li>
-          <li>
-            <div>magic-leap</div>
-            <p>Provides augmented reality on Magic Leap's Helio browser. Requires that the primary model be a GLB file, and the <a href="https://www.npmjs.com/package/@magicleap/prismatic">@magicleap/prismatic</a> library.</p>
-          </li>
-          <li>
-            <div>unstable-webxr</div>
-            <p>Provides augmented reality via the experimental <a href="https://immersive-web.github.io/webxr/">WebXR Device API</a>, implemented in Chrome Canary only behind flags. For more information see the <a href="https://codelabs.developers.google.com/codelabs/ar-with-webxr/#1">AR with WebXR Codelab</a>.</p>
-          </li>
-        </ul>
-
       </div>
     </div>
-  </div>
-
-  <div class="footer">
-    <ul>
-      <li class="attribution">
-        <a href="https://poly.google.com/view/dLHpzNdygsg">Astronaut</a> by <a href="https://poly.google.com/user/4aEd8rQgKu2">Poly</a>,
-        licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a>.
-      </li>
-    </ul>
-
-    <div style="margin-top:24px;" class="copyright">©Copyright 2018 Google Inc. Licensed under the Apache License 2.0.</div>
-    <div><a href="https://github.com/GoogleWebComponents/model-viewer">Github</a> ∙ <a href="https://model-viewer.glitch.me/">Glitch</a> ∙ <a href="https://github.com/GoogleWebComponents/model-viewer/issues">Bug report</a></div>
   </div>
 
   <!-- Documentation-specific dependencies: -->
