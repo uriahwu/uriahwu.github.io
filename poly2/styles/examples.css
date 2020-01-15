@@ -266,18 +266,14 @@ model-viewer:focus {
 
 
 .sample {
-  display: grid;
   position: relative;
   background: white;
-  grid-template-columns: 50% 50%;
-  grid-template-areas: "content demo";
 }
 .sample {
   border-bottom: var(--border-style);
 }
 
 .demo {
-  grid-area: demo;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -394,7 +390,7 @@ code {
   height: 100%;
 }
 .content {
-  grid-area: content;
+  display: none;
   position: relative;
   padding-top: 20px;
 }
