@@ -7,45 +7,21 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <link type="text/css" href="../styles/examples.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <style>
-      button{
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-        border: none;
-        background-color: blue;
-      }
-      button[slot="hotspot-hand"]{
-        --min-opacity: 0;
-        background-color: red;
-      }
-      #annotation{
-        background-color: #888888;
-        position: absolute;
-        transform: translate(10px, 10px);
-        border-radius: 10px;
-        padding: 10px;
-      }
-      /* This keeps child nodes hidden while the element loads */
-      :not(:defined) > * {
-        display: none;
-      }
-  </style>
   </head>
   <body>
   
     <div class="sample">
       <div id="demo-container-1" class="demo">
-              <model-viewer 
-                src="./car/scene.gltf" 
-                ar="" 
-                ar-scale="auto" 
-                camera-controls="" 
-                alt="A 3D model of an astronaut" 
-                background-color="#222" 
-                magic-leap="" 
-                unstable-webxr="">
-              </model-viewer>
+        <model-viewer 
+          src="./car/scene.gltf" 
+          ar="" 
+          ar-scale="auto" 
+          camera-controls="" 
+          alt="A 3D model of an astronaut" 
+          background-color="#222" 
+          magic-leap="" 
+          unstable-webxr="">
+        </model-viewer>
       </div>
     </div>
   
