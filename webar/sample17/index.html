@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="js-focus-visible">
+  <head>
+    <title>&lt;model-viewer&gt; Augmented Reality</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link type="text/css" href="../styles/examples.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+  </head>
+  <body>
+  
+    <div class="sample">
+      <div id="demo-container" class="demo">
+        <model-viewer 
+          src="https://poly.googleusercontent.com/downloads/c/fp/1582005080475952/3ijCUcuR9yP/2vs06R3l-Vh/DA007.gltf"
+          ios-src="https://poly.googleusercontent.com/downloads/c/fp/1582005080475952/3ijCUcuR9yP/0XgjS_qRNe0/DA007.usdz"
+          ar="" 
+          ar-scale="auto" 
+          camera-controls="" 
+          alt="A 3D model of an astronaut" 
+          background-color="#FFF"> 
+        </model-viewer>
+      </div>
+    </div>
+  
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+  
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+    <script type="module" src="../js/fullscreen.polyfill.js"></script>
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="../js/focus-visible.js" defer=""></script>
+    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+    <!--script src="../js/prismatic.min.js"></script-->
+    
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@v0.8.1/dist/model-viewer.js"></script>
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer@v0.8.1/dist/model-viewer-legacy.js"></script>
+    <!-- Documentation-specific dependencies: -->
+    <!--script type="module" src="../js/dependencies.js"></script-->
+  
+    <!--script nomodule="" src="../js/dependencies-legacy.js"></scri----pt-->
+  </body>
+</html>
