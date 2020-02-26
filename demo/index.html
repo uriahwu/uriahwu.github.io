@@ -23,7 +23,8 @@
       ua.forEach(function(x){ 
 				counts[x] = (counts[x] || 0) +1; 
 			});
-			document.write(
+			
+      document.write(
 			  "<h1>Enter numbers when prompted!</h1>" +
 				"<p>You entered following numbers:</p>" + JSON.stringify(ua) + "<br/>" +
 				"<p>The occurence is as follows:</p>" + JSON.stringify(counts));
