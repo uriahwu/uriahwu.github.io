@@ -70,5 +70,23 @@
     <!-- Loads <model-viewer> only on old browsers like IE11: -->
     <script nomodule="" src="./model-viewer-legacy.js"></script>
     <script type="module" src="./tester.js"></script>
+    <script>
+      const viewer = document.getElementById('hotspot-demo');
+      const hotspots = document.getElementsByTagName('button');
+      hotspots[0].addEventListener('click', function(e){
+        if(this.getAttribute('class').includes('selected')) {
+          this.setAttribute("class", "hotspot");  
+        } else {
+          this.setAttribute("class", "hotspot selected");
+        }
+      })
+      hotspots[1].addEventListener('click', function(e){
+        if(this.getAttribute('class').includes('selected')) {
+          this.setAttribute("class", "hotspot");  
+        } else {
+          this.setAttribute("class", "hotspot selected");
+        }
+      })
+    </script>
   </body>
 </html>
