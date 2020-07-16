@@ -33,9 +33,6 @@
     box-sizing: border-box;
     --min-hotspot-opacity: 0;
   }
-  .hotspot.selected {
-    
-  }
   .hotspot:not([data-visible]) {
     background-color: transparent;
   }
@@ -56,17 +53,16 @@
 </style>
   </head>
   <body>
-   
-    
     <div id="demo-container-1" class="demo">
       <model-viewer id="hotspot-demo" ar ar-modes="webxr" camera-controls src="./Astronaut.glb">
       <!--model-viewer id="hotspot-demo" ar ar-modes="webxr" camera-controls src="./source/table.gltf"-->
       <!--model-viewer id="hotspot-demo" ar ar-modes="webxr" camera-controls src="https://poly.googleusercontent.com/downloads/c/fp/1588834402255905/1q16uGVn78G/ao_lpTQvKGJ/model.gltf"-->
-        <button slot="hotspot-0" data-position="-0.54 0.93 0.1" data-normal="-0.73 0.05 0.69">
-          <div class="annotation">This hotspot disappears completely</div>
+        <button slot="hotspot-0" class="hotspot" data-position="-0.54 0.93 0.1" data-normal="-0.73 0.05 0.69">
+          <div class="annotation">This is the first hotspot</div>
         </button>
-        <button slot="hotspot-1" data-position="0.16 0.1 0.17" data-normal="-0.07 0.97 0.23" data-visibility-attribute="visible"></button>  
-        <div class="annotation">This annotation is fixed in screen-space</div>
+        <button slot="hotspot-1" class="hotspot" data-position="0.16 0.1 0.17" data-normal="-0.07 0.97 0.23">
+          <div class="annotation">This is the second hotspot</div>
+        </button>  
       </model-viewer> 
     </div>
     <script type="module" src="./dependencies.js"></script>
