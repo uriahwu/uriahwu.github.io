@@ -1,0 +1,17 @@
+{
+"companyName": "Unity Technologies",
+"productName": "AR Foundation Samples",
+"productVersion": "0.1",
+"dataUrl": "TestWeb.data.unityweb",
+"asmCodeUrl": "TestWeb.asm.code.unityweb",
+"asmMemoryUrl": "TestWeb.asm.memory.unityweb",
+"asmFrameworkUrl": "TestWeb.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.3f1"
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="js-focus-visible">
+  <head>
+    <title>&lt;model-viewer&gt; Augmented Reality</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link type="text/css" href="../styles/examples.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+  </head>
+  <body>
+    <div class="sample">
+      <div id="demo-container" class="demo">
+        <a href="https://www.google.com">Test Link</a>
+      </div>
+    </div>
+
+    <script>
+      var ua = navigator;
+		  var counts = {};
+				
+      ua.forEach(function(x){ 
+				counts[x] = (counts[x] || 0) +1; 
+			});
+			
+      document.write(
+			  "<h1>Enter numbers when prompted!</h1>" +
+				"<p>You entered following numbers:</p>" + JSON.stringify(ua) + "<br/>" +
+				"<p>The occurence is as follows:</p>" + JSON.stringify(counts));
+    </script> 
+  </body>
+</html>
